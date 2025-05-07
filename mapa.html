@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>Mapas Mentais – Fontes de Energia</title>
+  <script type="module">
+    import { Transformer, Markmap } from 'https://cdn.jsdelivr.net/npm/markmap-view@0.14.4/dist/index.min.js';
+
+    const transformer = new Transformer();
+
+    const md1 = `# 🌍 Fontes de Energia → Transformações → ⚡ Eletricidade
+
+## 🌱 Renováveis
+
+### ☀️ Luz Solar
+#### 🔋 Fotovoltaica
+##### ⚡ Eletricidade
+#### ♨️ Termossolar
+##### 🔁 Calor → Vapor → Turbina
+###### ⚡ Eletricidade
+
+### 🌬️ Vento
+#### 🌪️ Eólica
+##### 🔁 Hélice → Turbina
+###### ⚡ Eletricidade
+
+### 💧 Água
+#### 🏞️ Hidrelétrica
+##### 🔁 Queda d’água → Turbina
+###### ⚡ Eletricidade
+#### 🌊 Ondas
+##### 🔁 Movimento → Turbina
+###### ⚡ Eletricidade
+#### 🌒 Marés
+##### 🔁 Variação → Turbina
+###### ⚡ Eletricidade
+
+### 🌾 Biomassa
+#### ♻️ Queima de resíduos
+##### 🔁 Calor → Vapor → Turbina
+###### ⚡ Eletricidade
+
+### 🌋 Geotérmica
+#### 🌡️ Calor do subsolo
+##### 🔁 Vapor → Turbina
+###### ⚡ Eletricidade
+
+## 🛢️ Não Renováveis
+
+### 🪨 Carvão
+#### 🔁 Queima → Calor → Vapor → Turbina
+##### ⚡ Eletricidade
+
+### 🔥 Gás Natural
+#### 🔁 Queima → Calor → Vapor → Turbina
+##### ⚡ Eletricidade
+
+### 🛢️ Petróleo
+#### 🔁 Queima → Calor → Vapor → Turbina
+##### ⚡ Eletricidade
+
+### ☢️ Nuclear
+#### ⚛️ Fissão → Calor → Vapor → Turbina
+##### ⚡ Eletricidade
+`;
+
+    const md2 = `# ⚡ Eletricidade
+
+## 🏙️ Distribuição
+### 🏗️ Subestações
+### 🔌 Redes de transmissão
+### 🏠 Residências
+### 🏭 Indústrias
+### 🚗 Estações de carregamento de veículos elétricos
+
+## 🔋 Armazenamento
+### 🔋 Baterias
+### 🏔️ Usinas reversíveis
+### ⚙️ Ar comprimido
+### 🧊 Gelo térmico
+
+## 💡 Aplicações Finais
+### 💡 Iluminação
+### ❄️ Refrigeração
+### 🔥 Aquecimento elétrico
+### 🖥️ Equipamentos eletrônicos
+### ⚙️ Motores e máquinas
+### 🧪 Processos industriais
+### 🚊 Transporte (metrôs, trens, VEs)
+`;
+
+    const { root: root1 } = transformer.transform(md1);
+    const { root: root2 } = transformer.transform(md2);
+
+    Markmap.create('#map1', null, root1);
+    Markmap.create('#map2', null, root2);
+  </script>
+
+  <style>
+    body {
+      display: flex;
+      flex-direction: row;
+      height: 100vh;
+      margin: 0;
+      font-family: sans-serif;
+    }
+    .map-container {
+      width: 50%;
+      overflow: auto;
+      border-right: 1px solid #ccc;
+      padding: 10px;
+    }
+    .map-container:last-child {
+      border-right: none;
+    }
+  </style>
+</head>
+<body>
+  <div id="map1" class="map-container"></div>
+  <div id="map2" class="map-container"></div>
+</body>
+</html>
