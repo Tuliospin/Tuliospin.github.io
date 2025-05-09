@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+	<meta charset="UTF-8">
+	<title>Mapa Mental com Descrição</title>
+	<style>
+		body {
+			background-color: RGB(10, 23, 94);
+			color: white;
+			margin: 0;
+			padding: 0;
+			font-family: sans-serif;
+			height: 100vh;
+			display: flex;
+			flex-direction: column;
+		}
+
+		header {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			padding: 8px;
+			gap: 8px;
+		}
+
+		header img {
+			width: 120px;
+			height: auto;
+			border-radius: 8px;
+		}
+
+		.header-text {
+			max-width: 600px;
+			text-align: left;
+			flex-grow: 1;
+		}
+
+		.header-text h1 {
+			margin: 0;
+			font-size: 2rem;
+		}
+
+		.main-content {
+			display: flex;
+			flex: 1;
+			height: 100%;
+			width: 100%;
+		}
+
+		.markmap {
+			flex: 6;
+			background-color: RGB(10, 23, 94);
+			overflow-x: hidden; /* ⬅ Impede scroll horizontal */
+			overflow-y: auto;
+			min-width: 0;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			color: white;
+		}
+
+		.markmap > svg {
+			width: 100%;
+			height: 100%;
+			max-width: 100%;
+			max-height: 100%;
+			display: block;
+			color: white;
+		}
+
+		.description {
+			flex: 2;
+			background-color: RGB(10, 23, 94); /* Exatamente igual ao lado esquerdo */
+			padding: 20px;
+			overflow-y: auto;
+			min-width: 0;
+			color: rgb(43, 181, 199);
+		}
+
+		.description h2 {
+			margin-top: 0;
+		}
+	</style>
+</head>
+<body>
+
+	<header>
+		<div class="header-text">
+			<h1>🧠 Mapa Mental</h1>
+			<p>⚡ Fluxo das Fontes de Energia: Da Geração ao Consumo</p>
+		</div>
+		<img src="Imagem1.png" alt="Imagem lateral">
+	</header>
+
+	<div class="main-content">
+		<!-- Mapa Mental -->
+		<div class="markmap">
+			<script type="text/template">
+				- 🌍 TIPOS DE ENERGIA	
+					- 🌞 Energia Solar
+						- Fotovoltaica 
+							- 🔆🟦 Painéis Solares
+							- 🔄 Inversor (CC → CA)
+							- Injeção na rede elétrica
+								- Consumo 🏠 
+						- Solar Térmica
+							- Coletor Solar
+							- Aquecimento de água ou processos térmicos
+							- Consumo 🏠
+					- 🌬️ Energia Eólica
+						- Aerogeradores 
+								- 🏗️ Transmissão elétrica
+									- Consumo 🏭
+					- 💧 Energia Hidrelétrica
+						- Reservatórios / Rios
+							- 🏞️ Barragem e conduto forçado
+								- Turbina / Gerador
+									- 🏗️ Transmissão elétrica
+										- Consumo 🏛️
+					- 🌿 Energia de Biomassa
+						- Matéria orgânica (bagaço, madeira, resíduos)
+						- **Processos**
+						  *Combustão*
+						  *Gaseificação*
+						  *Digestão anaeróbia*
+							- Turbina / Gerador
+								- 🏗️ Transmissão elétrica
+									- Consumo 🏭
+					- 🌋 Energia Geotérmica
+						- Calor do subsolo
+							- Turbina / Gerador
+								- 🏗️ Transmissão elétrica
+									- Consumo 🏭
+					- 🌊 Energia das Marés e Ondas
+						- Movimento da água oceânica
+							- Turbina / Gerador
+								- 🏗️ Transmissão elétrica
+									- Consumo 🏠
+					- 🪨 Energia Termoéletrica
+						- 🔥 **Combustíveis Fósseis**
+						*Carvão*
+						*Queima em caldeiras*
+						*Geração de vapor*
+						*Gás Natural / Petróleo*
+							- Turbina / Gerador
+								- 🏗️ Transmissão elétrica
+									- Consumo 🏭
+					- ☢️ Energia Nuclear
+						- Urânio (fissão nuclear)
+							- Turbina / Gerador
+								- 🏗️ Transmissão elétrica
+									- Consumo 🏠
+			</script>
+		</div>
+
+		<!-- Descrição -->
+		<div class="description">
+			<h2>Descrição da Solução</h2>
+			<p>O Movimento RPNSAR Energia é uma iniciativa que promove a integração entre governo, empresas, academia e sociedade civil para repensar o setor energético. Seu foco é enfrentar o trilema energético — acesso universal, segurança e sustentabilidade — por meio da inovação, cooperação e capacitação. Atua como uma plataforma de articulação e conhecimento, incentivando a transição energética e a construção de uma matriz mais limpa, inclusiva e resiliente.</p>
+			<h2>Missão do RPNSAR</h2>
+			<p> - Integrar ensino, mercado e governo.</p>
+			<p> - Estimular pesquisas, eventos, publicações e capacitações.</p>
+			<p> - Influenciar políticas públicas ligadas à transição energética e desenvolvimento sustentável.</p>
+			<p> - Atuar como uma plataforma de conhecimento e cooperação.</p>
+			<h2>Visão e Propósito</h2>
+			<p> - Promover uma energia limpa, segura e acessível para todos.</p>
+			<p> - Impulsionar inovações tecnológicas.</p>
+			<p> - Garantir que a sustentabilidade seja central nas decisões do setor energético.</p>
+			<p> - Fortalecer a cooperação intersetorial.</p>
+		</div>
+	</div>
+
+	<script src="https://cdn.jsdelivr.net/npm/markmap-autoloader@latest"></script>
+
+</body>
+</html>
